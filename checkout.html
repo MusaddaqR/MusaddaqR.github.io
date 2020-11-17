@@ -19,13 +19,13 @@
         <main>
             <div v-if='showProduct'>
                 <div v-for="product in sortedProducts">
-                    <h2 v-text="product.title"></h2>
+                    <h2 v-text="product.subject"></h2>
                     <figure>
                         <img v-bind:src="product.image">
                     </figure>
-                    <p v-html="product.description"></p>
+                    <p v-html="product.location"></p>
                     <p>Price: {{product.price}}</p>
-                    <p>Available stock: {{product.availableInventory}}</p>
+                    <p>Available spaces: {{product.availableInventory}}</p>
 
                     <!-- <button v-on:click="addToCart" 
                     v-show='canAddToCart'>
@@ -36,8 +36,8 @@
 
                     <button disabled="disabled" v-else>Add to cart</button>
 
-                    <span v-if='product.availableInventory === cartCount(product.id)'>All out!</span>
-                    <span v-else-if="product.availableInventory - cartCount(product.id) < 5">
+                    <span v-if='product.availableInventory === cartCount(product.id)'>Out of Stock</span>
+                    <span v-else-if="product.availableInventory - cartCount(product.id) < 6">
                         Only {{product.availableInventory - cartCount(product.id)}} left!
                     </span>
                     <span v-else>Buy now!</span>
@@ -112,7 +112,7 @@
     </div>
 
     <script type="text/javascript">
-        var webstore = new Vue({
+        let webstore = new Vue({
             el: '#app',
             data: {
                 sitename: 'Vue.js Pet Depot',
