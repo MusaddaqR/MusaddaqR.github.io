@@ -4,7 +4,7 @@ let products = [
       "subject": "Mathematics",
       "location": "London",
       "price": "£" + 20.00,
-      "image": "images/product-fullsize.png",
+      "image": "images/maths.jpg",
       "availableInventory": 5,
       "rating": 2
     },
@@ -82,7 +82,7 @@ let products = [
     },
     {
       "id": 1010,
-      "subject": "Drama",
+      "subject": "Dramm",
       "location": "London",
       "price": "£" + 20.00,
       "image": "images/product-fullsize.png",
