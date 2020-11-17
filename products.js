@@ -4,18 +4,18 @@ let products = [
       "subject": "Mathematics",
       "location": "London",
       "price": "£" + 20.00,
-      "image": 'images/maths.jpg',
+      "image": 'maths.jpg',
       "availableInventory": 5,
-      "rating": 2
+
     },
     {
       "id": 1002,
       "subject": "English",
       "location": "London",
       "price": "£" + 20.00,
-      "image": "images/english.jpg",
+      "image": "english.jpg",
       "availableInventory": 5,
-      "rating": 2
+    
     },
     {
       "id": 1003,
@@ -24,7 +24,7 @@ let products = [
       "price": "£" + 20.00,
       "image": "images/product-fullsize.png",
       "availableInventory": 5,
-      "rating": 2
+  
     },
     {
       "id": 1004,
@@ -33,7 +33,7 @@ let products = [
       "price": "£" + 20.00,
       "image": "images/product-fullsize.png",
       "availableInventory": 5,
-      "rating": 2
+   
     },
     {
       "id": 1005,
@@ -42,7 +42,7 @@ let products = [
       "price": "£" + 20.00,
       "image": "images/product-fullsize.png",
       "availableInventory": 5,
-      "rating": 2
+    
     },
     {
       "id": 1006,
@@ -51,7 +51,7 @@ let products = [
       "price": "£" + 20.00,
       "image": "images/product-fullsize.png",
       "availableInventory": 5,
-      "rating": 2
+    
     },
     {
       "id": 1007,
@@ -60,7 +60,7 @@ let products = [
       "price": "£" + 20.00,
       "image": "images/product-fullsize.png",
       "availableInventory": 5,
-      "rating": 2
+     
     },
     {
       "id": 1008,
@@ -69,7 +69,7 @@ let products = [
       "price": "£" + 20.00,
       "image": "images/product-fullsize.png",
       "availableInventory": 5,
-      "rating": 2
+    
     },
     {
       "id": 1009,
@@ -78,7 +78,7 @@ let products = [
       "price": "£" + 20.00,
       "image": "images/product-fullsize.png",
       "availableInventory": 5,
-      "rating": 2
+     
     },
     {
       "id": 1010,
@@ -87,7 +87,7 @@ let products = [
       "price": "£" + 20.00,
       "image": "images/product-fullsize.png",
       "availableInventory": 5,
-      "rating": 2
+     
     },
     
   
