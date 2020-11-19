@@ -3,7 +3,7 @@ let products = [
       "id": 1001,
       "subject": "Mathematics",
       "location": "London",
-      "price": "£" + 50.00,
+      "price": "£" + 500.00,
       "image": 'images/maths.jpg',
       "availableInventory": 5,
 
@@ -12,7 +12,7 @@ let products = [
       "id": 1002,
       "subject": "English",
       "location": "London",
-      "price": "£" + 20.00,
+      "price": "£" + 700.00,
       "image": "images/english.jpg",
       "availableInventory": 5,
     

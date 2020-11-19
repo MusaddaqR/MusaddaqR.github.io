@@ -10,12 +10,13 @@
     <div id="app">
         <header>
             <h1 v-text="sitename"></h1>
-            <button v-on:click='showCheckout'>
+            <button  v-on:click='showCheckout'>
                 {{cartItemCount}}
                 <span class="fas fa-cart-plus"></span> Checkout
             </button>
         </header>
         <main>
+            
             <div v-if='showProduct'>
                 <div v-for="product in sortedProducts">
             
@@ -26,7 +27,6 @@
   
                     <p> location: {{product.location}}</p>
                     <p>Price: {{product.price}}</p>
-            
 
                     <span v-if='product.availableInventory === cartCount(product.id)'>Unavilable</span>
                     <span v-else-if="product.availableInventory - cartCount(product.id) < 6">
@@ -41,27 +41,34 @@
 
             <div v-else>
                 <h2>Checkout</h2>
+                <div class="form-field">
                 <p> 
-                    <strong>Name:</strong>
+                    <strong for="name">Name:</strong>
                     <!--one key press, only allows a-z,event occurs on user's input-->
                     <input onkeypress="return /[a-z]/i.test(event.key)" v-model.trim="order.Name"/>
+            
                 </p>
+            </div>
+
 
                 <p>
                     <!--Strong importance-->
                     <strong>Phone Number</strong>   
-                    <!--can only input numbers-->
-                    <input type="number" v-model.trim="order.phoneNumber" />
+                    <!--can only input numbers, onekeydown is used to disable the "E" value since type number 
+                    allows E because the spec allows it--> 
+                    <input type="number" v-model.trim="order.phoneNumber" onkeydown="return event.keyCode !== 69" />
                 </p>
             
-        
+            
                 <h2>Order Information</h2>
                 <p>Name: {{order.Name}}</p>
                 <p>Phone Number: {{order.phoneNumber}}</p>
                 <button v-on:click="submitForm">Place Order</button>
             </div>
+        
         </main>
     </div>
+    
 
     <script src="lesson.js"></script>
     <script src="app.js"></script>

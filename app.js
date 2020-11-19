@@ -7,8 +7,8 @@
                 cart: [],
                 showProduct: true,
                 order: {
-                    firstName: '',
-                    phoneNumber: '',    
+                    firstName: null,
+                    phoneNumber: null,    
                 },       
             },
      
@@ -18,11 +18,10 @@
                
                 },
                 showCheckout() {
-             
                     this.showProduct = this.showProduct ? false : true;
                 },
                 submitForm() {
-                    alert('Order submitted!')
+                    alert('The order has been succesful!')
                 },
                 canAddToCart(product) {
                     return product.availableInventory > this.cartCount(product.id);
@@ -35,14 +34,18 @@
                         }
                     }
                     return count;
-                }
+                },
+        
+
+                
+
+                
             },
             computed: {
                 cartItemCount() {
                     return this.cart.length;
-                },
+                },  
     
-
                 sortedProducts() {
                     let productsArray = this.products.slice(0);
                     function compare(a, b) {
@@ -54,5 +57,6 @@
                     }
                     return productsArray.sort(compare);
                 }
+                
             },
         });
