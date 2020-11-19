@@ -33,9 +33,7 @@
                     <span v-if='product.availableInventory === cartCount(product.id)'>Unavilable</span>
                     <span v-else-if="product.availableInventory - cartCount(product.id) < 6">
                          {{product.availableInventory - cartCount(product.id)}} Available Space(s)
-                    </span
-
-             
+    
                 </div>
             </div>
             <div v-else>
