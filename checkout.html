@@ -3,7 +3,7 @@
 <head>
     <title>Vue.js Pet Depot</title>
     <script src="https://unpkg.com/vue"></script>
-    <script src="products.js"></script>
+    <script src="lesson.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
@@ -25,18 +25,15 @@
                     </figure>
                     <p v-html="product.location"></p>
                     <p>Price: {{product.price}}</p>
-                    <p>Available spaces: {{product.availableInventory}}</p>
-
-
+            
                     <button v-on:click='addToCart(product)' v-if='canAddToCart(product)'>Add to cart</button>
 
                     <button disabled="disabled" v-else>Add to cart</button>
 
-                    <span v-if='product.availableInventory === cartCount(product.id)'>Out of Stock</span>
+                    <span v-if='product.availableInventory === cartCount(product.id)'>Unavilable</span>
                     <span v-else-if="product.availableInventory - cartCount(product.id) < 6">
-                        Only {{product.availableInventory - cartCount(product.id)}} left!
-                    </span>
-                    <span v-else>Buy now!</span>
+                         {{product.availableInventory - cartCount(product.id)}} Available Space(s)
+                    </span
 
              
                 </div>
