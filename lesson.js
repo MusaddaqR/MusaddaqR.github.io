@@ -3,8 +3,8 @@ let products = [
       "id": 1001,
       "subject": "Mathematics",
       "location": "London",
-      "price": "£" + 20.00,
-      "image": 'maths.jpg',
+      "price": "£" + 50.00,
+      "image": 'images/maths.jpg',
       "availableInventory": 5,
 
     },
@@ -13,7 +13,7 @@ let products = [
       "subject": "English",
       "location": "London",
       "price": "£" + 20.00,
-      "image": "english.jpg",
+      "image": "images/english.jpg",
       "availableInventory": 5,
     
     },
@@ -22,7 +22,7 @@ let products = [
       "subject": "Science",
       "location": "London",
       "price": "£" + 20.00,
-      "image": "images/product-fullsize.png",
+      "image": "images/science.png",
       "availableInventory": 5,
   
     },
@@ -30,8 +30,8 @@ let products = [
       "id": 1004,
       "subject": "Geography",
       "location": "London",
-      "price": "£" + 20.00,
-      "image": "images/product-fullsize.png",
+      "price": "£" + 100.00,
+      "image": "images/geography.png",
       "availableInventory": 5,
    
     },
@@ -40,7 +40,7 @@ let products = [
       "subject": "History",
       "location": "London",
       "price": "£" + 20.00,
-      "image": "images/product-fullsize.png",
+      "image": "images/history.jpg",
       "availableInventory": 5,
     
     },
@@ -48,8 +48,8 @@ let products = [
       "id": 1006,
       "subject": "International Technology",
       "location": "London",
-      "price": "£" + 20.00,
-      "image": "images/product-fullsize.png",
+      "price": "£" + 250.00,
+      "image": "images/it.jpg",
       "availableInventory": 5,
     
     },
@@ -58,7 +58,7 @@ let products = [
       "subject": "Design Technology",
       "location": "London",
       "price": "£" + 20.00,
-      "image": "images/product-fullsize.png",
+      "image": "images/dt.",
       "availableInventory": 5,
      
     },
@@ -67,7 +67,7 @@ let products = [
       "subject": "Food Technology",
       "location": "London",
       "price": "£" + 20.00,
-      "image": "images/product-fullsize.png",
+      "image": "images/foodtech.jpg",
       "availableInventory": 5,
     
     },
@@ -76,16 +76,16 @@ let products = [
       "subject": "Religious Studies",
       "location": "London",
       "price": "£" + 20.00,
-      "image": "images/product-fullsize.png",
+      "image": "images/re.png",
       "availableInventory": 5,
      
     },
     {
       "id": 1010,
-      "subject": "Dramm",
+      "subject": "Drama",
       "location": "London",
       "price": "£" + 20.00,
-      "image": "images/product-fullsize.png",
+      "image": "images/drama.png",
       "availableInventory": 5,
      
     },
