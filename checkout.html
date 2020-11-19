@@ -18,26 +18,27 @@
         <main>
             <div v-if='showProduct'>
                 <div v-for="product in sortedProducts">
-                    <!-- <h2 v-text="product.subject"></h2> -->
+            
                     <h2>Subject: {{product.subject}}</h2>
                     <figure>
                         <img v-bind:src="product.image">
                     </figure>
-                    <!-- <p> v-html="product.location"></p> -->
+  
                     <p> location: {{product.location}}</p>
                     <p>Price: {{product.price}}</p>
             
-                    <button v-on:click='addToCart(product)' v-if='canAddToCart(product)'>Add to cart</button>
-
-                    <button disabled="disabled" v-else>Add to cart</button>
 
                     <span v-if='product.availableInventory === cartCount(product.id)'>Unavilable</span>
                     <span v-else-if="product.availableInventory - cartCount(product.id) < 6">
-                         {{product.availableInventory - cartCount(product.id)}} Available Space(s)
-                        </span>
-    
+                         {{product.availableInventory - cartCount(product.id)}} Available Space(s)  </span>
+                         <h1></h1>
+                    <button v-on:click='addToCart(product)' v-if='canAddToCart(product)'>Add to cart</button>
+
+                    <button disabled="disabled" v-else>Add to cart</button>
+                      
                 </div>
             </div>
+
             <div v-else>
                 <h2>Checkout</h2>
                 <p> 

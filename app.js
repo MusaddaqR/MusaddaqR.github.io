@@ -2,17 +2,14 @@
         let webstore = new Vue({
             el: '#app',
             data: {
-                sitename: 'Vue.js Pet Depot',
+                sitename: 'Web app with Vue.js',
                 products: products,
-
                 cart: [],
                 showProduct: true,
                 order: {
                     firstName: '',
-                    phoneNumber: '',
-                    
-                },
-               
+                    phoneNumber: '',    
+                },       
             },
      
             methods: {
