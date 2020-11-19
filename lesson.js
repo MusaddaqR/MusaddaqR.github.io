@@ -58,7 +58,7 @@ let products = [
       "subject": "Design Technology",
       "location": "London",
       "price": "£" + 20.00,
-      "image": "images/dt.",
+      "image": "images/dt.jpg",
       "availableInventory": 5,
      
     },
