@@ -1,92 +1,86 @@
-<html>
+    <html>
 
-<head>
-    <title>Vue.js Pet Depot</title>
+    <head>
+    <title>Web app with Vue.js</title>
     <script src="https://unpkg.com/vue"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
+    </head>
 
-<body>
+    <body>
     <div id="app">
 
-       
-        <button v-for="filter in filters" @click="selectedFilter = filter" v-bind:class="{ active: isSelectedFilter(filter) }">{{filter}}</button>      
-        <button v-for="order in orderBy" @click="selectedOrder = order" v-bind:class="{ active: isSelectedOrder(order) }">{{order}}</button>
-        
 
+    <header>
+    <h1 v-text="sitename"></h1>
+    <button :disabled="!cartItemCount" v-on:click='showCheckout'>
+    {{cartItemCount}}
+    <span class="fas fa-cart-plus"></span> Checkout</button>
+    </header>
+    <main>
 
-        <header>
-            <h1 v-text="sitename"></h1>
-            <button  :disabled="!cartItemCount" v-on:click='showCheckout'>
-                {{cartItemCount}}
-                <span class="fas fa-cart-plus"></span> Checkout
-            </button>
-        </header>
-        <main>
-            
-            <div v-if='showProduct'>
-                <div v-for="product in sortedProducts">
-            
-                    <h2>Subject: {{product.subject}}</h2>
-                    <figure>
-                        <img v-bind:src="product.image">
-                    </figure>
-  
-                    <p> location: {{product.location}}</p>
-                    <p>Price: {{product.price}}</p>
+    <div v-if='showProduct'>
 
-                    <span v-if='product.availableInventory === cartCount(product.id)'>Unavilable</span>
-                    <span v-else-if="product.availableInventory - cartCount(product.id) < 6">
-                         {{product.availableInventory - cartCount(product.id)}} Available Space(s)  </span>
-                         <h1></h1>
-                    <button v-on:click='addToCart(product)' v-if='canAddToCart(product)'>Add to cart</button>
+    <!-- sorts by 4 filter attributes -->
+    <button v-for="filter in filters" @click="attributeFilter = filter"
+    v-bind:class="{ active: isattributeFilter(filter) }">{{filter}}</button>
 
-                    <button disabled="disabled" v-else>Add to cart</button>
-                      
-                </div>
-            </div>
+    <!-- Ascends or descends -->
+    <button v-for="order in orderBy" @click="attributeOrder = order"
+    v-bind:class="{ active: isattributeOrder(order) }">{{order}}</button>
 
-            <div v-else>
-                <h2>Checkout</h2>
+    <div v-for="product in sortedProducts">
+    <h2>Subject: {{product.subject}}</h2>
+    <figure> <img v-bind:src="product.image"> </figure>
+    <p> location: {{product.location}}</p>
+    <p>Price: {{product.price}}</p>
 
-                <form @submit.prevent="submitForm" autocomplete="off">
-                <div class="form-group">
-                <p> 
-                    <label for="name">Name</label>
-                    <!--one key press, only allows a-z,event occurs on user's input-->
-                    <input onkeypress="return /[a-z]/i.test(event.key)" v-model.trim="order.Name" id="name"/>
-            <h4 style="color:red" v-if="!nameIsValid" class="error-message">The Name is Required</h4>
-                </p>
-            </div>
+    <span v-if='product.availableInventory === cartCount(product.id)'>Unavilable</span>
+    <span v-else-if="product.availableInventory - cartCount(product.id) < 7">
+    {{product.availableInventory - cartCount(product.id)}} Available Space(s) </span>
+    <h1></h1>
 
-            <div class="form-group">
-                <p>
-                    <!--Strong importance-->
-               <label for="PhoneNumber">Phone Number</label>
-                    <!--can only input numbers, onekeydown is used to disable the "E" value since type number 
-                    allows E because the spec allows it--> 
-                    <input type="number" v-model.number="order.phoneNumber" onkeydown="return event.keyCode !== 69" />
-                    <h4 style="color:red" v-if="!phoneIsValid" class="error-message">Minimum 9 Digits Required</h4>
-                </p>
-            </div>
-            
-                <h2>Order Information</h2>
-                <p>Name: {{order.Name}}</p>
-                <p>Phone Number: {{order.phoneNumber}}</p>
-                <button :disabled="!formIsValid" v-on:click="submitForm">Place Order</button>
-            </form>
+    <button v-on:click='addToCart(product)' v-if='canAddToCart(product)'>Add to cart</button>
+    <button disabled="disabled" v-else>Add to cart</button>
 
-
-            
-            </div>
-        
-        </main>
     </div>
-    
+    </div>
+
+    <div v-else>
+    <h2>Checkout</h2>
+
+    <form @submit.prevent="submitForm" autocomplete="off">
+   
+    <p>
+    <label for="name">Name</label>
+    <!--one key press, only allows a-z,event occurs on user's input-->
+    <input onkeypress="return /[a-z]/i.test(event.key)" v-model.trim="order.Name" id="name" />
+    <h4 style="color:red" v-if="!nameIsValid" class="error-message">The Name is Required</h4>
+ 
+  
+    <p>
+    <!--Strong importance-->
+    <label for="PhoneNumber">Phone Number</label>
+    <!--can only input numbers, onekeydown is used to disable the "E" value since type number 
+    allows E because the spec allows it-->
+    <input type="number" v-model.number="order.phoneNumber"
+    onkeydown="return event.keyCode !== 69" />
+    <h4 style="color:red" v-if="!phoneIsValid" class="error-message">Minimum 9 Digits Required</h4>
+    </p>
+  
+
+    <h2>Order Information</h2>
+    <p>Name: {{order.Name}}</p>
+    <p>Phone Number: {{order.phoneNumber}}</p>
+    <button :disabled="!formIsValid" v-on:click="submitForm">Place Order</button>
+    </form>
+
+    </div>
+    </main>
+    </div>
 
     <script src="lessons.js"></script>
     <script src="app.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>
