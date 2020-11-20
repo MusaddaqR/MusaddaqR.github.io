@@ -2,7 +2,7 @@ let products = [
     {
       "id": 1001,
       "subject": "Mathematics",
-      "location": "London",
+      "location": "Mexico",
       "price": "£" + 500.00,
       "image": 'images/maths.jpg',
       "availableInventory": 5,
@@ -20,7 +20,7 @@ let products = [
     {
       "id": 1003,
       "subject": "Science",
-      "location": "London",
+      "location": "Chicago",
       "price": "£" + 20.00,
       "image": "images/science.png",
       "availableInventory": 5,
@@ -56,7 +56,7 @@ let products = [
     {
       "id": 1007,
       "subject": "Design Technology",
-      "location": "London",
+      "location": "Japan",
       "price": "£" + 20.00,
       "image": "images/dt.jpg",
       "availableInventory": 5,

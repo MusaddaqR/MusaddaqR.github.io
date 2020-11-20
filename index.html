@@ -8,6 +8,13 @@
 
 <body>
     <div id="app">
+
+       
+        <button v-for="filter in filters" @click="selectedFilter = filter" v-bind:class="{ active: isSelectedFilter(filter) }">{{filter}}</button>      
+        <button v-for="order in orderBy" @click="selectedOrder = order" v-bind:class="{ active: isSelectedOrder(order) }">{{order}}</button>
+        
+
+
         <header>
             <h1 v-text="sitename"></h1>
             <button  :disabled="!cartItemCount" v-on:click='showCheckout'>
@@ -41,11 +48,6 @@
 
             <div v-else>
                 <h2>Checkout</h2>
-
-
-
-                
-
 
                 <form @submit.prevent="submitForm" autocomplete="off">
                 <div class="form-group">

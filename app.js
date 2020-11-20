@@ -7,10 +7,15 @@
                 products: products,
                 cart: [],
                 showProduct: true,
+                filters: ['subject', 'location', 'price', 'availableInventory'],
+                orderBy: ['Ascend', 'Descend'],
+                attributeFilter: 'subject',
+                attributeOrder: 'Ascend',   
                 order: {
                     firstName: null,
                     phoneNumber: null,    
-                }       
+                }
+             
             }
         },
      
@@ -48,7 +53,22 @@
                     return 0;
                 }
                 return productsArray.sort(compare);
-            }
+            },
+
+            sortedProducts() {
+                let productsArray = this.products.slice(0); 
+                let that = this;
+                function compare(a, b) {
+                    if (a[that.attributeFilter] > b[that.attributeFilter]) {
+                        return that.attributeOrder == 'Ascend' ? 1 : -1;
+                    }
+                    if (a[that.attributeFilter] < b[that.attributeFilter]) {
+                        return that.attributeOrder == 'Ascend' ? -1 : 1;
+                    }
+                    return 0; 
+                }
+                return productsArray.sort(compare); 
+            },
             
         },
 
@@ -75,7 +95,7 @@
                 }
             },
 
-            
+
 
                 canAddToCart(product) {
                     return product.availableInventory > this.cartCount(product.id);
@@ -89,10 +109,14 @@
                     }
                     return count;
                 },
-        
-
-                
-
+           
+                isattributeFilter(filter) {
+                    return filter == this.attributeFilter ? true : false;
+                },
+                isattributeOrder(order) {
+                    return order == this.attributeOrder ? true : false;
+                },
+            
                 
             },
 
