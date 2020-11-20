@@ -84,7 +84,7 @@ let products = [
       "id": 1010,
       "subject": "Drama",
       "location": "London",
-      "price": "£" + 40,
+      "price": "£" + 65,
       "image": "images/drama.png",
       "availableInventory": 5,
      

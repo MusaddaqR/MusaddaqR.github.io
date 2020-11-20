@@ -20,8 +20,6 @@
         },
 
 
-
-
         computed: {
 
         nameIsValid () {
@@ -31,12 +29,10 @@
         phoneIsValid () {
         return typeof this.order.phoneNumber === 
         'number' && this.order.phoneNumber > 01111111111
-
         },
 
         formIsValid() {
         return this.nameIsValid && this.phoneIsValid
-
         },
 
         cartItemCount() {
@@ -72,15 +68,15 @@
 
         },
 
+
         methods: {
         addToCart(product) {
         this.cart.push(product.id);
-
         },
+
         showCheckout() {
         this.showProduct = this.showProduct ? false : true;
         },
-
 
         submitForm() {
         const formIsValid = this.nameIsValid && this.phoneIsValid
@@ -91,11 +87,10 @@
         }
         },
 
-
-
         canAddToCart(product) {
         return product.availableInventory > this.cartCount(product.id);
         },
+
         cartCount(id) {
         let count = 0;
         for (let i = 0; i < this.cart.length; i++) {
@@ -113,10 +108,10 @@
         isattributeFilter(filter) {
         return filter == this.attributeFilter ? true : false;
         },
+
         isattributeOrder(order) {
         return order == this.attributeOrder ? true : false;
         },
-
 
         },
 

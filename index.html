@@ -12,9 +12,11 @@
 
     <header>
     <h1 v-text="sitename"></h1>
+    
     <button :disabled="!cartItemCount" v-on:click='showCheckout'>
     {{cartItemCount}}
     <span class="fas fa-cart-plus"></span> Checkout</button>
+    <h></h>
     </header>
     <main>
 
@@ -46,8 +48,11 @@
     </div>
 
     <div v-else>
-    <h2>Checkout</h2>
+        <h1></h1>
+    <button v-on:click='showCheckout'>Go back to Lessons</button>
 
+    <h2>Checkout</h2>
+   
     <form @submit.prevent="submitForm" autocomplete="off">
    
     <p>
